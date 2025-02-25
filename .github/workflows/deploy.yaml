@@ -35,5 +35,5 @@ jobs:
         ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_INSTANCE_IP }} << 'EOF'
         docker pull dinoslavik/my-apache2:latest
         docker stop $(docker ps -a -q) || true
-        docker run -d -p dinoslavik/my-apache2:latest
+        docker run -d -p 80:80 dinoslavik/my-apache2:latest
         EOF
