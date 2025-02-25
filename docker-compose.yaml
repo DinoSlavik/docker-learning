@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+
+  apache2-serv:
+    image: my-apache2
+    ports:
+      - 80:80
